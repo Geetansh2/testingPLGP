@@ -1,4 +1,6 @@
-
+options {
+    skipDefaultCheckout(true)
+}
     stages{
         stage('Hello'){
             steps{
