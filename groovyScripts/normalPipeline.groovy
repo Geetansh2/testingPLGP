@@ -1,5 +1,4 @@
-pipeline{
-    agent any
+
     stages{
         stage('Hello'){
             steps{
@@ -8,7 +7,9 @@ pipeline{
         }
         stage('Name'){
             steps{
-                echo 'My name is Geetansh'
+               withGroovy(tool:'4.0.4'){
+                   sh 'groovy --version'
+               }
             }
         }
 
@@ -19,4 +20,3 @@ pipeline{
         }
     }
 
-}
