@@ -9,6 +9,7 @@ pipeline {
         stage('Run testNg suite job') {
             steps {
                 build job: 'RunGradleTestNGSuite'
+                build job: 'RunGradleTestNGSuite'
             }
         }
     }
