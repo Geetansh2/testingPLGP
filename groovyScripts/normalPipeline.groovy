@@ -1,22 +1,22 @@
-pipeline{
-    agent any
+options {
+    skipDefaultCheckout(true)
+}
     stages{
-        stage('Hello'){
+        stage('Starting job'){
             steps{
-                echo 'Hello world'
+                echo 'Starting job'
             }
         }
-        stage('Name'){
+        stage('Run testNg suite job'){
             steps{
-                echo 'My name is Geetansh'
+              build job: 'RunGradleTestNGSuite'
+               }
             }
         }
 
-    }
     post{
         always{
             emailext body: 'Summary', subject: 'Pipeline Status new', to: 'geetanshbhatia12@gmail.com'
         }
     }
 
-}
