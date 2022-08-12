@@ -2,20 +2,18 @@ options {
     skipDefaultCheckout(true)
 }
     stages{
-        stage('Hello'){
+        stage('Starting job'){
             steps{
-                echo 'Hello world'
+                echo 'Starting job'
             }
         }
-        stage('Name'){
+        stage('Run testNg suite job'){
             steps{
-               withGroovy(tool:'4.0.4'){
-                   sh 'groovy --version'
+              build job: 'RunGradleTestNGSuite'
                }
             }
         }
 
-    }
     post{
         always{
             emailext body: 'Summary', subject: 'Pipeline Status new', to: 'geetanshbhatia12@gmail.com'
