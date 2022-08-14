@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Run testNg suite job') {
             steps {
-                build job: 'RunGradleTestNGSuite'
-                build job: 'RunGradleTestNGSuite'
+                build job: 'RunGradleTestNGSuite',parameters: [string(name: 'RunType', value: 'Perfomance')]
+                build job: 'RunGradleTestNGSuite',parameters: [string(name: 'RunType', value: 'Perfomance')]
             }
         }
     }
