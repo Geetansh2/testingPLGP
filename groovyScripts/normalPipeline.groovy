@@ -1,9 +1,15 @@
+
 pipeline {
     agent any
+    parameters {
+        string 'name'
+    }
+
     stages {
         stage('Starting job') {
+
             steps {
-                echo '{$Name}'
+                echo "$name"
             }
         }
         stage('Run testNg suite job') {
