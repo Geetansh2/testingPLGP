@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Starting job') {
             steps {
-                echo '$Name'
+                echo '{$Name}'
             }
         }
         stage('Run testNg suite job') {
